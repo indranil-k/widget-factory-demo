@@ -1,0 +1,153 @@
+/* Add your CSS styles for the modal here */
+.modal-container {
+    display: none;
+    /* Add other styles as needed */
+  }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wf-text-center {
+    text-align: center;
+}
+
+.example .modal-content {
+    line-height: 24px;
+}
+ 
+.modal-main-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    position: relative;
+    z-index: 999;
+    width: fit-content;
+    margin: 0 auto;
+}
+ 
+.modal-wrap {
+    position: relative;
+}
+
+.seperator .example {
+    background-image: url('https://cdn.pixabay.com/photo/2023/09/03/11/13/mountains-8230502_1280.jpg');
+    background-size: cover;
+    background-position: revert;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal-button {
+    padding: 12px;
+    background-color: #000;
+    border: 1px solid #282828;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 25px;
+    color: snow;
+    cursor: pointer;
+    outline: none;
+    padding: .75em 2em;
+    position: relative;
+    text-transform: uppercase; 
+}
+
+.modal-button:hover {
+    animation: glow 1s ease-in infinite;
+}
+    
+.modal-button::before {
+    animation: glow 1s ease-in infinite;
+    background: #000;
+    border-radius: inherit;
+    content: '';
+    filter: blur(10px);
+    opacity: .75;
+    position: absolute;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+    
+.modal-button:hover::before {
+    filter: blur(20px);
+    opacity: 1;
+}
+
+@keyframes glow {
+    0% {
+      background: #000;
+    }
+    25% {
+      background: #000;
+    }
+    100% {
+      background: #010101;
+    }
+  }
+
+div#modal1,
+div#modal2,
+div#modal3,
+div#modal4,
+div#modal5 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    min-width: 400px;
+    background-color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    padding: 40px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.modal-1,
+.modal-2,
+.modal-3,
+.modal-4,
+.modal-5 {
+    position: relative;
+}
+ 
+button.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+}
+ 
+button.modal-close-btn:after {
+    content: '\f2d3';
+    font-size: 30px;
+    display: inline-block;
+    font-family: fontawesome;
+}
+ 
+.modal-overlay.custom-overlay-class{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color : rgba(51,51,51,0.55);
+    z-index: 1;
+}
+   
+.extendeable-modal {
+    text-align: center;
+    padding: 160px 0 120px;
+}
+
+  /* Add other CSS styles for the modal components */

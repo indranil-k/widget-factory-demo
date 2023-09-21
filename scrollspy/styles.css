@@ -1,0 +1,239 @@
+/* Custom styles for the sidebar and expanded content */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,p, ul, ol{
+    margin:  20px;
+}
+
+/* Top-position Sidebar Styles */
+.sidebar {
+    height: 0; /* Initially hide the sidebar */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-y: hidden;
+    transition: 0.3s;
+    z-index: 1;
+    color: white;
+    transform: translateY(-100%);
+    z-index: 2;
+    height: fit-content;
+    top: 68px;
+}
+
+/* Additional styling for the top-position sidebar */
+.sidebar-content {
+    padding: 8px 20px;
+}
+
+/* Smooth appearance and disappearance */
+.sidebar.open {
+    height: 100%;
+    transform: translateY(0);
+}
+
+.sidebar-header {
+    padding: 10px;
+    text-align: center;
+}
+
+.expand-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+ul li i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.main-content {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.expanded-content {
+    display: none;
+}
+
+/* Sidebar expansion animation */
+.sidebar.expanded {
+    transform: translateX(0);
+}
+
+.expanded .main-content {
+    margin-left: 250px;
+}
+span.ex-text{
+    display: none;
+}
+
+.sidebar li{
+    cursor: pointer;
+    margin: 30px 0;
+}
+.hamburger-icon {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(224, 224, 224);
+    margin: 5px 0;
+}
+
+header{
+    width: 100%;
+    background-color: #333;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index:5;
+}
+
+header h2{
+    color: rgb(224, 224, 224);
+}
+
+main{
+    padding-top: 100px;
+}
+main .example{
+    background-color: rgba(217, 217, 217, 0.5);  
+    min-height: 100px; 
+    position: relative;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.oc1{
+    background-color: rgba(255,255,255,0.7);
+}
+
+
+.form-container {
+    background-color: rgba(232, 232, 232, 0.7);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.form-container form{
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.button {
+    cursor: pointer;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+  }
+  
+  .primary-button {
+    background-color: rgb(0, 102, 204);
+    color: white;
+  }
+  
+  .primary-button:hover {
+    background-color: rgb(0, 102, 204, 0.85);
+  }
+  
+  .secondary-button {
+    border: 2px solid #0066CC;
+    background-color: white;
+    color: #0066CC;
+  }
+  
+  .secondary-button:hover {
+    background-color: rgb(0, 102, 204, 0.1);
+  }
+  
+  .example.text{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .closeBtn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+  }

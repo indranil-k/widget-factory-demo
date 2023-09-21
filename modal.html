@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Custom Widget</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/modal/style.css">
+    <link rel="stylesheet" href="global.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="/modal/main.js"></script>
+    
+</head>
+<body>
+    <div class="modal-wrapper-outside">
+
+        <!-- Default modal -->
+
+        <div class="seperator">
+
+            <div id="modal-widget1" class="widget1">
+                <h2 class="wf-text-center">Default modal</h2>
+                <div class="example modal-1">
+                    <div class="modal-main-wrap">
+                        <div class="modal-wrap">
+                            <!-- Button to trigger the modal -->
+                            <button class="modal-button" id="modalBtn1">Open Modal</button>
+                    
+                            <!-- Modal content -->
+                            <div id="modal1" class="custom-modal-class">
+                                <div class="modal-header">
+                                    <h2 class="modal-title"></h2>
+                                </div>
+                                <div class="modal-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-overlay custom-overlay-class" style="display: none;"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="seperator">
+            <h1>customizations</h1>
+
+            <!-- Modal with overlay -->
+
+            <div id="modal-widget2" class="widget2">
+                <h2 class="wf-text-center">Customization 1: Modal with overlay</h2>
+                <div class="example modal-2">
+                    <div class="modal-main-wrap">
+                        <div class="modal-wrap">
+                        <!-- Button to trigger the modal -->
+                        <button class="modal-button" id="modalBtn2">Open Modal</button>
+                    
+                        <!-- Modal content -->
+                        <div id="modal2" class="custom-modal-class">
+                            <div class="modal-header">
+                                <h2 class="modal-title"></h2>
+                            </div>  
+                            <div class="modal-content"></div>
+                            <button class="modal-close-btn custom-close-button-class"></button>
+                        </div>
+                    </div>
+                    </div>
+                <div class="modal-overlay custom-overlay-class" style="display: none;"></div></div>
+            </div>
+
+            <!-- Open modal with Overlay -->
+
+            <div id="modal-widget3" class="widget3">
+                <h2 class="wf-text-center">Customization 2: Pre-loaded Modal with overlay (On page load)</h2>
+                <div class="example modal-3">
+                    <div class="modal-main-wrap">
+                        <div class="modal-wrap">
+                        <!-- Button to trigger the modal -->
+                        <button class="modal-button" id="modalBtn3">Open Modal</button>
+                    
+                        <!-- Modal content -->
+                        <div id="modal3" class="custom-modal-class">
+                            <div class="modal-header">
+                                <h2 class="modal-title"></h2>
+                            </div>  
+                            <div class="modal-content"></div>
+                            <button class="modal-close-btn custom-close-button-class"></button>
+                        </div>
+                    </div>
+                    </div>
+                <div class="modal-overlay custom-overlay-class" style="display: none;"></div></div>
+            </div>
+
+            <!-- modal with Overlay click -->
+
+            <div id="modal-widget4" class="widget4">
+                <h2 class="wf-text-center">Customization 3: Modal with Overlay Click</h2>
+                <div class="example modal-4">
+                    <div class="modal-main-wrap">
+                        <div class="modal-wrap">
+                        <!-- Button to trigger the modal -->
+                        <button class="modal-button" id="modalBtn4">Open Modal</button>
+                    
+                        <!-- Modal content -->
+                        <div id="modal4" class="custom-modal-class">
+                            <div class="modal-header">
+                                <h2 class="modal-title"></h2>
+                            </div>  
+                            <div class="modal-content"></div>
+                            <button class="modal-close-btn custom-close-button-class"></button>
+                        </div>
+                    </div>
+                    </div>
+                <div class="modal-overlay custom-overlay-class" style="display: none;"></div></div>
+            </div>
+
+        </div>
+
+        <!-- extendeable modal -->
+
+        <div class="seperatorw extendeable-modal">
+            <h1>Extended Modal</h1>
+            <div id="modal-widget5" class="widget widget5">                
+                <div class="example modal-5">
+                    <label for="colorPicker">Select a color:</label>
+                    <input type="color" id="colorPicker" name="colorPicker" value="#ff0000">
+                </div>
+            </div>
+            <div class="modal-overlay custom-overlay-class" style="display: none;"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="relative p-20">
+        <a class="center" href="./spinner.html">Next : Spinner Widget</a>
+    </div>
+    <script src="/modal/script.js"></script>
+
+</body>
+</html>

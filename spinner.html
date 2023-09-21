@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Custom Widget</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+    <link rel="stylesheet" href="./spinner/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="./spinner/main.js"></script>
+    <link rel="stylesheet" href="global.css">
+    <script>
+        $(document).ready(function() {
+            $("#spinner1").spinner({});
+            $("#spinner2").spinner({
+                initialValue: 8,
+                step: 5
+            });
+            $("#spinner3").spinner({
+                initialValue: -8,
+                step: 5,
+                allowNegative: true,
+                increamentIcon: '&#8679;',
+                decreamentIcon: '&#8681;',
+            });
+            $("#timer1").timer({
+                initialValue: 90,
+                step: 5,
+                expandable: true,
+                endTime: -90,
+                timerDelay: 1000,
+                allowNegative: true
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Default Spinner</h2>
+    <div id="spinner1"></div>
+    <hr/>
+    <h2>Customisations</h2>
+    <h4>1) Can able to set the initially value and count of values to be changed on each step</h4>
+    <div id="spinner2"></div>
+    <h4>2) Can able accept the negative values and allows to change the button text</h4>
+    <div id="spinner3"></div>
+    <hr />
+    <h2>Expandipility</h2>
+    <h4>Timer widged expanded with the Spinner widged</h4>
+    <div id="timer1" class="timer-container"></div>
+    <hr />
+    <div class="relative p-20">
+        <a class="center" href="./scrollspy.html">Next : Scrollspy Widget</a>
+    </div>
+    <div class="relative p-20">
+        <a class="center" href="./modal.html">Previous : Modal Widget</a>
+    </div>
+</body>
+</html>

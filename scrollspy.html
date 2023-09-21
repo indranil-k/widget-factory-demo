@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollspy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" />
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="/scrollspy/styles.css">
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-content">
+            <ul>
+                <li><i class="fas fa-home"></i> Home</li>
+                <li><i class="fas fa-user"></i> Profile</li>
+                <li><i class="fas fa-envelope"></i> Messages</li>
+                <li><i class="fas fa-cog"></i> Settings</li>
+            </ul>
+        </div>
+    </div>
+    <header>
+        <h2>Widget Factory Demo</h2>
+        <div class="hamburger-icon h-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <main>
+        <div class="seperator">
+            <h1>Default offcanvas</h1>
+            <p>With our Offcanvas widget, you can streamline web and mobile app design by concealing secondary content, such as menus, 
+                shopping carts, and notifications, until users choose to reveal them. 
+                This approach maintains a clean and organized interface while ensuring easy access to essential features, 
+                enhancing user engagement and navigation.</p>
+            <div class="example">            
+                <button id="openBtn1" class="center button primary-button">Open</button>
+                <div id="offcanvas1" class="oc1">
+                    <button tabindex="0" class="closeBtn close"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="offcanvas-content">
+                        <h2>Off canvas content</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, adipisci.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seperator">
+            <h1>Customized offcanvas</h1>
+            <p>These customization options for the offcanvas widget offer user benefits by allowing them to:</p>
+            <ol>
+                <li><strong>Control Width:</strong> Users can set the width of the offcanvas, accommodating different content sizes or personal preferences.</li>                
+                <li><strong>Interaction:</strong> The animationDuration option enhances the user experience by specifying how quickly the offcanvas opens and closes, 
+                    ensuring a smooth and visually pleasing transition.</li>                
+                <li><strong>Customization:</strong> Users can define their own event names (openEvent and closeEvent) for triggering offcanvas actions, 
+                    providing flexibility for integrating the widget into their specific application workflows or user interactions.</li>
+            </ol>
+            <div class="example">
+                <button id="openBtn2" class="center toggle-btn button primary-button">Login</button>
+                <div id="offcanvas2" class="oc2">
+                    <button tabindex="0" class="closeBtn close"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="form-container">
+                        <h2>Login</h2>
+                        <form id="myform">
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Login">
+                            </div>
+                        </form>
+                    </div>  
+                </div>          
+            </div>
+        </div>
+        <div class="seperator">
+            <h1>Enhanced offcanvas</h1>
+            <p>You can create various new widgets by enhancing an offcanvas widget, depending on your specific needs and creativity. 
+                </p>
+            <div class="example text">
+                <h2>The Above Hamburger Menu is an example of our Extened Offcanvas Widget</h2>
+            </div>
+        </div>
+    </main>
+    <div class="relative p-20">
+        <a class="center" href="./spinner.html">Previous : Spinner Widget</a>
+    </div>
+    <script src="./scrollspy/widgets.js"></script>
+    <script src="./scrollspy/main.js"></script>
+
+</body>
+</html>

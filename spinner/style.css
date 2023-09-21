@@ -1,0 +1,92 @@
+body {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.wf-spinner  {
+    margin-bottom: 22px;
+}
+.wf-spinner .spinner {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+.wf-spinner .spinner input {
+    width: 92px;
+    height: 52px;
+    font-size: 22px;
+    padding-right: 33px;
+    border: none;
+    text-align: center;
+    color: #019dda;
+    border: 1px solid #019dda;
+}
+.wf-spinner .spinner .spinner-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+.wf-spinner .spinner .spinner-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 23px;
+    font-size: 22px;
+    margin: 2px;
+    color: #fff;
+    background-color: #019dda;
+    border: 1px solid #019dda;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.wf-spinner .spinner .spinner-buttons button:hover {
+    background-color: #e1e1e1;
+    color: #019dda;
+}
+
+.wf-timer .timer-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    font-size: 22px;
+}
+.wf-timer .timer-counter .timer-seconds-container {
+    display: flex;
+    position: relative;
+}
+.wf-timer .timer-counter .timer-minutes,
+.wf-timer .timer-counter .timer-seconds-container .timer-seconds {
+    padding: 12px;
+    line-height: 1;
+    margin: 0 5px;
+    color: #019dda;
+    border: 2px solid #019dda;
+    border-radius: 50%;
+}
+.wf-timer .timer-counter .timer-minus {
+    margin: 0 4px;
+    color: #019dda;
+}
+.wf-timer .timer-counter .timer-separator {
+    font-size: 20px;
+    margin: 0 4px;
+    color: #019dda;
+}
+.wf-timer .timerPlayButton {
+    display: inline-block;
+    width: 90px;
+    font-size: 18px;
+    border: none;
+    padding: 7px 14px;
+    margin-bottom: 22px;
+    color: #fff;
+    background-color: #019dda;
+    border-radius: 10px;
+    cursor: pointer;
+}
