@@ -1,52 +1,80 @@
 body {
     padding: 20px;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
 }
-.wf-spinner  {
-    margin-bottom: 22px;
+hr {
+    margin-top: 20px;
+    border-color: #019dda;
 }
-.wf-spinner .spinner {
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex-item {
+    flex: 0 0 calc(50% - 10px);
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.wf-spinner {
     display: inline-flex;
-    align-items: center;
     position: relative;
-}
-.wf-spinner .spinner input {
-    width: 92px;
-    height: 52px;
+    width: 120px;
+    height: 60px;
     font-size: 22px;
-    padding-right: 33px;
-    border: none;
     text-align: center;
     color: #019dda;
     border: 1px solid #019dda;
+    margin-bottom: 12px;
 }
-.wf-spinner .spinner .spinner-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    right: 0;
-    top: 0;
+.wf-spinner .wf-spinner-input {
+    display: inline-flex;
+    position: relative;
+    border: none;
+    padding: 0 32px 0 0;
+    margin: 0;
+    width: 100%;
     height: 100%;
+    text-align: center;
 }
-.wf-spinner .spinner .spinner-buttons button {
+.wf-spinner .wf-spinner-input:focus, .wf-spinner .wf-spinner-input:active {
+    border: none;
+    outline: none;
+}
+.wf-spinner .ui-button {
+    display: inline-block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #019dda;
+    border-radius: 4px;
+}
+.ui-widget-content a {
+    color: #fff
+}
+.wf-spinner .ui-button.ui-spinner-up {
+    top: 3px;
+    right: 3px;
+}
+.wf-spinner .ui-button.ui-spinner-down {
+    bottom: 3px;
+    right: 3px;
+}
+.wf-spinner .ui-button .ui-button-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 23px;
-    font-size: 22px;
-    margin: 2px;
-    color: #fff;
-    background-color: #019dda;
-    border: 1px solid #019dda;
-    cursor: pointer;
-    border-radius: 4px;
-}
-.wf-spinner .spinner .spinner-buttons button:hover {
-    background-color: #e1e1e1;
-    color: #019dda;
+    left: 0;
+    top: 0;
+    font-size: 17px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-indent: unset;
 }
 
 .wf-timer .timer-counter {

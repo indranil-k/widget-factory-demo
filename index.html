@@ -9,17 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="./modal/style.css">
-    <link rel="stylesheet" href="./global.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="./modal/main.js"></script>
+    <link rel="stylesheet" href="./global.css">
     
 </head>
 <body>
     <div class="modal-wrapper-outside">
-
-        <!-- Default modal -->
 
         <div class="seperator">
 
@@ -28,11 +26,9 @@
                 <div class="example modal-1">
                     <div class="modal-main-wrap">
                         <div class="modal-wrap">
-                            <!-- Button to trigger the modal -->
                             <button class="modal-button" id="modalBtn1">Open Modal</button>
-                    
-                            <!-- Modal content -->
-                            <div id="modal1" class="custom-modal-class">
+
+                            <div id="modal1" class="custom-modal-class default-modal">
                                 <div class="modal-header">
                                     <h2 class="modal-title"></h2>
                                 </div>
@@ -52,7 +48,7 @@
             <!-- Modal with overlay -->
 
             <div id="modal-widget2" class="widget2">
-                <h2 class="wf-text-center">Customization 1: Modal with overlay</h2>
+                <h2 class="wf-text-center">Customization 1: Modal (newsletter)</h2>
                 <div class="example modal-2">
                     <div class="modal-main-wrap">
                         <div class="modal-wrap">
@@ -75,7 +71,7 @@
             <!-- Open modal with Overlay -->
 
             <div id="modal-widget3" class="widget3">
-                <h2 class="wf-text-center">Customization 2: Pre-loaded Modal with overlay (On page load)</h2>
+                <h2 class="wf-text-center">Customization 2: Pre-loaded Modal (Login Form)</h2>
                 <div class="example modal-3">
                     <div class="modal-main-wrap">
                         <div class="modal-wrap">
@@ -83,7 +79,7 @@
                         <button class="modal-button" id="modalBtn3">Open Modal</button>
                     
                         <!-- Modal content -->
-                        <div id="modal3" class="custom-modal-class">
+                        <div id="modal3" class="custom-modal-class login-form-modal">
                             <div class="modal-header">
                                 <h2 class="modal-title"></h2>
                             </div>  
@@ -97,8 +93,8 @@
 
             <!-- modal with Overlay click -->
 
-            <div id="modal-widget4" class="widget4">
-                <h2 class="wf-text-center">Customization 3: Modal with Overlay Click</h2>
+            <div id="modal-widget4" class="widget4 modal-with-overlay information-modal">
+                <h2 class="wf-text-center">Customization 3: Modal (Information Display) without Overlay Click</h2>
                 <div class="example modal-4">
                     <div class="modal-main-wrap">
                         <div class="modal-wrap">
@@ -118,6 +114,10 @@
                 <div class="modal-overlay custom-overlay-class" style="display: none;"></div></div>
             </div>
 
+
+            <!-- Modal container -->
+            <div id="login-modal"></div>
+
         </div>
 
         <!-- extendeable modal -->
@@ -133,12 +133,181 @@
             <div class="modal-overlay custom-overlay-class" style="display: none;"></div>
             </div>
         </div>
+        <div class="relative p-20">
+            <a class="center" href="./spinner.html">Next : Spinner Widget</a>
+        </div>
+    </div>
+  
 
-    </div>
-    <div class="relative p-20">
-        <a class="center" href="./spinner.html">Next : Spinner Widget</a>
-    </div>
-    <script src="./modal/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            //Default modal
+            $("#modal1").modal({
+                modalClass: "custom-modal-class",
+                overlayClass: "custom-overlay-class",
+                closeButtonClass: "custom-close-button-class",
+                isOpen: false, // The modal and overlay will be shown on initialization
+                closeOnOverlayClick: true, // to close modal on clicking outside of modal        
+                modalTitle: "Default modal title", // Default modal title
+                modalContent: "Modals are used to draw the user's attention to important information, actions, or decisions that require immediate attention. They help prevent users from performing other actions until the modal is dealt with, making them ideal for critical or confirmatory tasks.", // Default modal content
+                appendTo: ".modal-1"
+            });
+        
+            $("#modalBtn1").on("click", function() {
+                $("#modal1").modal("open");
+            });
+
+            //2. modal with overlay newsletter
+            $("#modal2").modal({
+                modalClass: "custom-modal-class",
+                overlayClass: "custom-overlay-class",
+                closeButtonClass: "custom-close-button-class",
+                isOpen: false, // The modal and overlay will be shown on initialization
+                closeOnOverlayClick: true, // to close modal on clicking outside of modal        
+                modalTitle: "Stay Updated", // Default modal title
+                modalContent: `
+                <div class="modal-inner-wrap" data-role="focusable-scope" style="max-width: 400px;">
+                    <div id="modal-content-3" class="modal-content" data-role="content"><div class="block newsletter newsletter-content" id="popup-newsletter" style="display: block;">
+                <div class="intro">
+                    <p class="description">Keep up with our latest news about products, events, stories and more!        </p>
+                </div>
+                <div class="content">
+                    <form class="form subscribe" novalidate="novalidate" action="#"  id="popup-newsletter-validate">
+
+                        <div class="input-default-button">
+                            <div>
+                                <input type="email" id="pop_newsletter" placeholder="Email" class="emailInput" value="" data-validate="{required:true, 'validate-email':true}">
+                            </div><br/>
+                            <button class="submit-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                </div></div>
+                </div>`,
+                appendTo: ".modal-2"
+            });
+        
+            $("#modalBtn2").on("click", function() {
+                $("#modal2").modal("open");
+            });
+
+            //3. open modal with overlay click
+            $("#modal3").modal({
+                modalClass: "custom-modal-class",
+                overlayClass: "custom-overlay-class",
+                closeButtonClass: "custom-close-button-class",
+                isOpen: true, // The modal and overlay will be shown on initialization
+                closeOnOverlayClick: true, // to close modal on clicking outside of modal        
+                modalTitle: "Sign In Form", // Default modal title
+                modalContent: `
+                <div class="modal-inner-wrap" data-role="focusable-scope" style="max-width: initial;">
+                        <div id="modal-content-8" class="modal-content" data-role="content"><div id="customer-popup-login" class="customer-popup-login" style="">
+                    <div class="block block-customer-login">
+                        <div class="block-content" aria-labelledby="block-customer-popup-login-heading">
+                            <form class="form form-login" action="https://www.arper.com/en_GB/customer/ajax/login/" method="post" id="customer-popup-login-form" novalidate="novalidate">
+                                <input name="form_key" type="hidden" value="EPLKu2jXZgQQng7D">                <input type="hidden" name="redirect_url" value="https://www.arper.com/en_GB/customer/account/">
+                                <fieldset class="fieldset login" data-hasrequired="* Required Fields">
+                                    <div class="field note description">
+                                        Access our tools and services dedicated to the world of professionals.                    
+                                    </div><br/>
+                                    
+                                    <div class="field username input-default required">
+                                        <input name="username" type="text" value="" placeholder="Username" autocomplete="off" id="username-login" title="Username" data-validate="{required:true}">
+                                    </div>
+
+                                    <div class="field password input-default-button required">
+                                        <input name="password" type="password" placeholder="Password" autocomplete="off" id="pass-login" title="Password" data-validate="{required:true}">
+                                        
+                                    </div>
+
+                                    <div class="actions-toolbar">
+                                        <button type="submit" class="action login primary" name="send" id="send2-login">
+                                            <span>Sign In</span>
+                                        </button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="customer-forgot-password" style="display:none;">
+                        <form class="form forgot-password" action="https://www.arper.com/en_GB/arpercustomer/account/forgotpassword/" method="post" id="form-validate" novalidate="novalidate">
+                            <fieldset class="fieldset" data-hasrequired="* Required Fields">
+                                <div class="field note description">Please enter your email address below to receive a password reset link.</div>
+                                <div class="messages"></div>
+                                <div class="field email input-default required">
+                                    <input type="email" name="email" alt="email" placeholder="Email" id="email_address" value="" autocomplete="off" data-validate="{required:true, 'validate-email':true}">
+                                    <label for="email_address" class="label"><span>Email</span></label>
+                                </div>
+
+                                <div class="actions-toolbar">
+                                    <button type="submit" class="action submit reset_password primary" name="send" id="send2">
+                                        <span>Confirm</span>
+                                    </button>
+                                    <a class="show-back-login action back" name="back" href="#" id="show-back-login">
+                                        Go back                    </a>
+
+                                </div>
+                            </fieldset>
+
+                        </form>
+                    </div>
+                    
+                </div></div>
+                        
+                    </div>
+
+                `, // Default modal content
+                appendTo: ".modal-3"
+            });
+        
+            $("#modalBtn3").on("click", function() {
+                $("#modal3").modal("open");
+            });
+
+            //modal with overlay click
+            $("#modal4").modal({
+                modalClass: "custom-modal-class",
+                overlayClass: "custom-overlay-class",
+                closeButtonClass: "custom-close-button-class",
+                isOpen: false, // The modal and overlay will be shown on initialization
+                closeOnOverlayClick: false, // to close modal on clicking outside of modal        
+                modalTitle: "Product Details", // Default modal title
+                modalContent: `
+                <ul>
+                    <li><strong>Product Name:</strong> Acme XYZ Pro</li>
+                    <li><strong>Category:</strong> Electronics</li>
+                    <li><strong>Price:</strong> $499.99</li>
+                </ul>                
+                <h3>Shipping:</h3>
+                <p>
+                    Standard shipping typically takes 3-5 business days.
+                </p>
+
+                <h3>Customer Reviews:</h3>
+                <p>
+                    <a href="#">Link to customer reviews and ratings</a>
+                </p>
+                
+                `, // Default modal content
+                appendTo: ".modal-4"
+            });
+        
+            $("#modalBtn4").on("click", function() {
+                $("#modal4").modal("open");
+            });
+
+            $("#login-modal").modal({
+            showLoginForm: true,
+            onLogin: function (username) {
+                // Custom logic to handle a successful login
+                alert("Welcome, " + username + "!");
+            },
+            });
+
+            
+        });
+    </script>
 
 </body>
 </html>

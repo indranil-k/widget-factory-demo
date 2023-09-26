@@ -8,6 +8,124 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.modal-content .content {
+    margin-top: 24px;
+}
+
+.block.newsletter .form.subscribe {
+    display: table;
+    width: 100%;
+}
+
+.input-default-button {
+    position: relative;
+}
+
+.input-default-button input.emailInput {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .002em;
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 12px;
+    border: 1px solid #ededed;
+    border-radius: 3.5px;
+    background-color: transparent;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.default-modal#modal1 {
+    background: #fff !important;
+    box-shadow: 6px 10px 10px #000 !important;
+}
+
+button.submit-btn {
+    border: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.input-default-button label {
+    color: #666;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    line-height: 20px;
+    letter-spacing: .002em;
+    position: absolute;
+    pointer-events: none;
+    left: 18px;
+    top: 50%;
+    opacity: 0;
+    transform: translate(0, -50%);
+    transition: .2s ease all;
+}
+
+.btn-newsletter {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 18px;
+}
+
+.fieldset.login {
+    border: 0;
+}
+
+.login-form-modal {
+    background-color: #fdbb2d !important;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    box-shadow: rgba(34, 193, 195, 0.3) 0px 9px 16px;
+}
+
+.login-form-modal button.modal-close-btn:after {
+    content: 'Close';
+    font-size: 16px;
+    display: inline-block;
+    font-weight: 600;
+    font-family: 'Montserrat';
+}
+
+.form-login #username-login, .form-login #pass-login  {
+    margin-bottom: 20px;
+    padding: 12px 10px;
+    width: 300px;
+    max-width: 100%;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 1px 2px 9px #000;
+}
+
+.action.login.primary{
+    border: 2px solid #000;
+    padding: 10px 20px;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    
+}
+
+.action.login.primary:hover {
+    border: 2px solid #000;
+    color: #fff;
+    transition: 1s;
+    background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.form-login .actions-toolbar {
+    display: inline-flex;
+    flex-direction: column;
+}
+
 .wf-text-center {
     text-align: center;
 }
@@ -17,6 +135,7 @@ body {
 }
  
 .modal-main-wrap {
+    padding: 50px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,6 +157,7 @@ body {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    /* background: linear-gradient(90deg, rgb(182 176 122 / 60%) 0%, rgba(142,133,13,0.03702731092436973) 61%, rgb(0 212 255 / 38%) 100%); */
 }
 
 .modal-button {
@@ -49,18 +169,22 @@ body {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     border: none;
     border-radius: 25px;
-    color: snow;
+    color: #000;
+    font-weight: 600;
     cursor: pointer;
     outline: none;
     padding: .75em 2em;
     position: relative;
-    text-transform: uppercase; 
+    text-transform: uppercase;
+    background: rgb(34,193,195);
+    box-shadow: rgba(34, 193, 195, 0.3) 0px 9px 16px !important;
 }
 
 .modal-button:hover {
     animation: glow 1s ease-in infinite;
+    color: #fff;
 }
-    
+
 .modal-button::before {
     animation: glow 1s ease-in infinite;
     background: #000;
@@ -109,7 +233,17 @@ div#modal5 {
     text-align: center;
     padding: 40px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+
+    background-color: #fdbb2d !important;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 9px 16px !important;
+
 }
+
+/* .modal-with-overlay .modal-overlay.custom-overlay-class{
+    background-color: rgba(51,51,51,0.85);
+} */
 
 .modal-1,
 .modal-2,
@@ -147,7 +281,34 @@ button.modal-close-btn:after {
    
 .extendeable-modal {
     text-align: center;
-    padding: 160px 0 120px;
+    padding: 40px 0 120px;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    box-shadow: rgba(34, 193, 195, 0.3) 0px 9px 16px !important;
+}
+
+.extendeable-modal .widget {
+    margin-top: 200px;
+}
+.extendeable-modal label {
+    font-size: 20px;
+    font-weight: 600;
+}
+.extendeable-modal img {
+    min-width: 24px !important;
+    min-height: 24px !important;
+}
+.extendeable-modal input {
+    width: 100px;
+    height: 60px;
+}
+
+.information-modal .modal-content {
+    text-align: left;
+}
+
+.information-modal .modal-content ul {
+    padding-left: 0;
 }
 
   /* Add other CSS styles for the modal components */

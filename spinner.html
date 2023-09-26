@@ -4,36 +4,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery Custom Widget</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
-    <link rel="stylesheet" href="./spinner/style.css">
+    <link rel="stylesheet" href="./spinnerNew/style.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="./spinner/main.js"></script>
-    <link rel="stylesheet" href="./global.css">
+    <script src="./spinnerNew/main.js"></script>
     <script>
         $(document).ready(function() {
-            $("#spinner1").spinner({});
-            $("#spinner2").spinner({
-                initialValue: 8,
-                step: 5
+            $("#defaultSpinner1").customSpinner({disabled: true});
+            $("#defaultSpinner2").customSpinner({
+                min: -5,
+                max: 5
             });
-            $("#spinner3").spinner({
-                initialValue: -8,
-                step: 5,
-                allowNegative: true,
-                increamentIcon: '&#8679;',
-                decreamentIcon: '&#8681;',
+            $("#defaultSpinner3").customSpinner({      
+                create: function(event, ui) {
+                    console.log("create: " + JSON.stringify(ui));
+                },
+                spin: function(event, ui) {
+                    console.log("spin: " + JSON.stringify(ui));
+                },
+                stop: function(event, ui) {
+                    console.log("stop: " +  JSON.stringify(ui));
+                },
+                change: function(event, ui) {
+                    console.log("change: " +  JSON.stringify(ui));
+                }
             });
-            $("#timer1").timer({
-                initialValue: 90,
-                step: 5,
-                expandable: true,
-                endTime: -90,
+            $("#defaultSpinner4").customSpinner({
+                initialValue: 1.0,
+                numberFormat: "n"
+            });
+            $("#customizationSpinner1").customSpinner({
+                initialValue: 5
+            });
+            $("#customizationSpinner2").customSpinner({
+                step: 4
+            });
+            $("#customizationSpinner3").customSpinner({
+                min: -10,
+                max: 10,
+                icons: {
+                    upIcon: String.fromCharCode(8679),
+                    downIcon:  String.fromCharCode(8681)
+                },
+                initialValue: -2,
+                allowNegative: true
+            });
+            $("#timer1").customTimer({
+                max: 5,
+                min: -5,
                 timerDelay: 1000,
                 allowNegative: true
             });
@@ -41,24 +61,46 @@
     </script>
 </head>
 <body>
-    <h2>Default Spinner</h2>
-    <div id="spinner1"></div>
-    <hr/>
-    <h2>Customisations</h2>
-    <h4>1) Can able to set the initially value and count of values to be changed on each step</h4>
-    <div id="spinner2"></div>
-    <h4>2) Can able accept the negative values and allows to change the button text</h4>
-    <div id="spinner3"></div>
     <hr />
-    <h2>Expandipility</h2>
-    <h4>Timer widged expanded with the Spinner widged</h4>
+    <h2>Default Options</h2>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h4>1) Default spinner disabling option</h4>
+            <input id="defaultSpinner1">
+        </div>
+        <div class="flex-item">
+            <h4>2) Default setting min and max value. <br />(For example, with a minimum value of -5 and a maximum value of +5)</h4>
+            <input id="defaultSpinner2">
+        </div>
+        <div class="flex-item">
+            <h4>3) Default callback functions</h4>
+            <input id="defaultSpinner3">
+        </div>
+    </div>
+    <hr />
+    <h2>Customization</h2>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h4>1) Can able to set the initially value to the spinner</h4>
+            <input id="customizationSpinner1">
+        </div>
+        <div class="flex-item">
+            <h4>2) Can able to set step value counton each change</h4>
+            <input id="customizationSpinner2">
+        </div>
+        <div class="flex-item">
+            <h4>3) Can able to change the button text</h4>
+            <input id="customizationSpinner3">
+        </div>
+    </div>
+    <hr />
+    <h2>Expandability</h2>
+    <h4>Timer widget expanded with the Spinner widget and its options</h4>
     <div id="timer1" class="timer-container"></div>
     <hr />
     <div class="relative p-20">
         <a class="center" href="./scrollspy.html">Next : Scrollspy Widget</a>
-    </div>
-    <div class="relative p-20">
-        <a class="center" href="./index.html">Previous : Modal Widget</a>
+        <a class="center" href="./index.html">Previus: Modal Widget</a>
     </div>
 </body>
 </html>
