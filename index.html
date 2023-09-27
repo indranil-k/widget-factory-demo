@@ -22,7 +22,7 @@
         <div class="seperator">
 
             <div id="modal-widget1" class="widget1">
-                <h2 class="wf-text-center">Default modal</h2>
+                <h2 class="wf-text-center">Modal Component</h2>
                 <div class="example modal-1">
                     <div class="modal-main-wrap">
                         <div class="modal-wrap">
@@ -47,15 +47,13 @@
 
             <!-- Modal with overlay -->
 
-            <div id="modal-widget2" class="widget2">
-                <h2 class="wf-text-center">Customization 1: Modal (newsletter)</h2>
+            <!-- <div id="modal-widget2" class="widget2">
+                <h2 class="wf-text-center">Customization 1</h2>
                 <div class="example modal-2">
                     <div class="modal-main-wrap">
                         <div class="modal-wrap">
-                        <!-- Button to trigger the modal -->
                         <button class="modal-button" id="modalBtn2">Open Modal</button>
                     
-                        <!-- Modal content -->
                         <div id="modal2" class="custom-modal-class">
                             <div class="modal-header">
                                 <h2 class="modal-title"></h2>
@@ -66,19 +64,17 @@
                     </div>
                     </div>
                 <div class="modal-overlay custom-overlay-class" style="display: none;"></div></div>
-            </div>
+            </div> -->
 
             <!-- Open modal with Overlay -->
 
             <div id="modal-widget3" class="widget3">
-                <h2 class="wf-text-center">Customization 2: Pre-loaded Modal (Login Form)</h2>
+                <h2 class="wf-text-center">Customization 1</h2>
                 <div class="example modal-3">
                     <div class="modal-main-wrap">
                         <div class="modal-wrap">
-                        <!-- Button to trigger the modal -->
                         <button class="modal-button" id="modalBtn3">Open Modal</button>
                     
-                        <!-- Modal content -->
                         <div id="modal3" class="custom-modal-class login-form-modal">
                             <div class="modal-header">
                                 <h2 class="modal-title"></h2>
@@ -94,7 +90,7 @@
             <!-- modal with Overlay click -->
 
             <div id="modal-widget4" class="widget4 modal-with-overlay information-modal">
-                <h2 class="wf-text-center">Customization 3: Modal (Information Display) without Overlay Click</h2>
+                <h2 class="wf-text-center">Customization 2</h2>
                 <div class="example modal-4">
                     <div class="modal-main-wrap">
                         <div class="modal-wrap">
@@ -123,7 +119,7 @@
         <!-- extendeable modal -->
 
         <div class="seperatorw extendeable-modal">
-            <h1>Extended Modal</h1>
+            <h1>Expandability</h1>
             <div id="modal-widget5" class="widget widget5">                
                 <div class="example modal-5">
                     <label for="colorPicker">Select a color:</label>
@@ -132,12 +128,9 @@
             </div>
             <div class="modal-overlay custom-overlay-class" style="display: none;"></div>
             </div>
-        </div>
-        <div class="relative p-20">
-            <a class="center" href="./spinner.html">Next : Spinner Widget</a>
-        </div>
     </div>
-  
+
+    </div>
 
     <script>
         $(document).ready(function() {
@@ -149,7 +142,7 @@
                 closeButtonClass: "custom-close-button-class",
                 isOpen: false, // The modal and overlay will be shown on initialization
                 closeOnOverlayClick: true, // to close modal on clicking outside of modal        
-                modalTitle: "Default modal title", // Default modal title
+                modalTitle: "Modal title", // Default modal title
                 modalContent: "Modals are used to draw the user's attention to important information, actions, or decisions that require immediate attention. They help prevent users from performing other actions until the modal is dealt with, making them ideal for critical or confirmatory tasks.", // Default modal content
                 appendTo: ".modal-1"
             });
@@ -308,6 +301,5 @@
             
         });
     </script>
-
 </body>
 </html>
