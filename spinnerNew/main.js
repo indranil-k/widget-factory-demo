@@ -20,7 +20,6 @@ $.widget("custom.customSpinner", $.ui.spinner, {
         culture: "en-US", //Specifies the culture (locale) for formatting numbers.
         step: 1, //Sets the increment or decrement step for the spinner.
         initialValue: 0, //Allows to set initiall value in the spinner. It should be greater then min value
-        allowNegative: false
     },
 
     _create: function() {
@@ -33,7 +32,7 @@ $.widget("custom.customSpinner", $.ui.spinner, {
             parentElement.find('.ui-spinner-down .ui-button-icon').text(this.options.icons.downIcon);
         }.bind(this), 0);
 
-        if(this.options.initialValue < this.options.min && !this.options.allowNegative) {
+        if(this.options.initialValue < this.options.min) {
             this.element.val(this.options.min);
         } else {
             this.element.val(this.options.initialValue);
@@ -57,7 +56,7 @@ $.widget("custom.customTimer", $.custom.customSpinner, {
 
     _startTimer: function () {
         var self = this;
-        var timerValue = self.options.max;
+        var timerValue = self.options.min;
 
         var timerContainer = $('.timer-container');
         var timerCounter = $("<div>").addClass("timer-counter").appendTo(timerContainer);
@@ -73,10 +72,6 @@ $.widget("custom.customTimer", $.custom.customSpinner, {
         function updateTimer() {
             var isNegative = timerValue < 0;
 
-            if (!self.options.allowNegative && isNegative) {
-                timerValue = 0;
-            }
-
             var absTimerValue = Math.abs(timerValue);
             var seconds = absTimerValue % 60;
             var minutes = Math.floor(absTimerValue / 60);
@@ -87,12 +82,12 @@ $.widget("custom.customTimer", $.custom.customSpinner, {
 
             self._trigger("change", null, { value: timerValue });
 
-            if (timerValue <= self.options.min) {
+            if (timerValue >= self.options.max) {
                 clearInterval(timerInterval);
                 timerPlayButton.text('Reset');
             }
 
-            timerValue -= self.options.step;
+            timerValue += self.options.step;
         }
 
         timerPlayButton.on("click", function () {
@@ -100,7 +95,7 @@ $.widget("custom.customTimer", $.custom.customSpinner, {
                 clearInterval(timerInterval);
                 timerPlayButton.text("Play");
             } else if (timerPlayButton.text() === "Reset") {
-                timerValue = self.options.max;
+                timerValue = self.options.min;
                 timerInterval = setInterval(updateTimer, self.options.timerDelay);
                 timerPlayButton.text('Pause');
             } else {

@@ -6,16 +6,24 @@ hr {
     margin-top: 20px;
     border-color: #019dda;
 }
+h4 {
+    margin-bottom: 0;
+}
 .flex-container {
     display: flex;
     flex-wrap: wrap;
 }
-.flex-item {
+.flex-item-2 {
     flex: 0 0 calc(50% - 10px);
     padding: 5px;
     margin: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+@media (max-width: 576px) {
+    .flex-item-2 {
+        flex: 0 0 calc(100% - 10px);
+    }
 }
 
 .wf-spinner {
@@ -27,7 +35,7 @@ hr {
     text-align: center;
     color: #019dda;
     border: 1px solid #019dda;
-    margin-bottom: 12px;
+    margin: 12px;
 }
 .wf-spinner .wf-spinner-input {
     display: inline-flex;
@@ -76,12 +84,25 @@ hr {
     background: none;
     text-indent: unset;
 }
+.wf-spinner + .spinnerActions {
+    display: block;
+    margin-bottom: 10px;
+    color: blue;
+}
+.wf-spinner #customizationSpinner4 {
+    background-color: #019dda;
+    color: #fff;
+}
+.wf-spinner #customizationSpinner4 ~ a {
+    color: #019dda;
+    background-color: #fff;
+}
 
 .wf-timer .timer-counter {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 22px;
+    margin: 22px;
     font-size: 22px;
 }
 .wf-timer .timer-counter .timer-seconds-container {
