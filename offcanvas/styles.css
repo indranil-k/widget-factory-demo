@@ -237,3 +237,10 @@ main .example{
     cursor: pointer;
     outline: none;
   }
+.image-container{
+    position: relative;
+    top: 100px;
+}
+.image-container img{
+    width: 100%;
+}
